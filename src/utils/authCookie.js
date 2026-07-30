@@ -5,6 +5,7 @@ export const setAuthCookie = (res, token) => {
     httpOnly: true,
     sameSite: 'lax',
     secure: process.env.NODE_ENV === 'production',
+    path: '/',
     maxAge: getCookieMaxAge(),
   });
 };
@@ -14,5 +15,6 @@ export const clearAuthCookie = (res) => {
     httpOnly: true,
     sameSite: 'lax',
     secure: process.env.NODE_ENV === 'production',
+    path: '/',
   });
 };
