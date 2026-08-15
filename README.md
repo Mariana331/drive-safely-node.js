@@ -18,17 +18,6 @@ Frontend: репозиторій [`drive-safely`](../drive-safely) (Next.js).
 npm install
 ```
 
-Створіть `.env`:
-
-```env
-PORT=3002
-FRONTEND_URL=http://localhost:3000
-MONGODB_URI=mongodb://127.0.0.1:27017/drive-safely
-JWT_SECRET=change-me-in-production
-JWT_EXPIRES_IN=7d
-NODE_ENV=development
-```
-
 ```bash
 npm run seed          # наповнити новини (опційно)
 npm run seed:user     # демо-користувач (опційно)
@@ -37,9 +26,9 @@ npm run dev           # http://localhost:3002
 
 ## Swagger
 
-| | URL |
-|--|-----|
-| UI | [http://localhost:3002/api-docs](http://localhost:3002/api-docs) |
+|      | URL                                                                        |
+| ---- | -------------------------------------------------------------------------- |
+| UI   | [http://localhost:3002/api-docs](http://localhost:3002/api-docs)           |
 | JSON | [http://localhost:3002/api-docs.json](http://localhost:3002/api-docs.json) |
 
 Специфікація: `src/docs/openapi.js`.
@@ -52,16 +41,16 @@ npm run dev           # http://localhost:3002
 
 ## Endpoints
 
-| Method | Path | Auth |
-|--------|------|------|
-| GET | `/api/health` | — |
-| POST | `/api/auth/register` | — |
-| POST | `/api/auth/login` | — |
-| POST | `/api/auth/logout` | — |
-| GET | `/api/auth/me` | cookie |
-| GET | `/api/news` | — |
-| GET | `/api/news/:slug` | — |
-| GET | `/api/users/me/profile` | cookie |
+| Method | Path                    | Auth   |
+| ------ | ----------------------- | ------ |
+| GET    | `/api/health`           | —      |
+| POST   | `/api/auth/register`    | —      |
+| POST   | `/api/auth/login`       | —      |
+| POST   | `/api/auth/logout`      | —      |
+| GET    | `/api/auth/me`          | cookie |
+| GET    | `/api/news`             | —      |
+| GET    | `/api/news/:slug`       | —      |
+| GET    | `/api/users/me/profile` | cookie |
 
 ## Скрипти
 
