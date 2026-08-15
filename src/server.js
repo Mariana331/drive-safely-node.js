@@ -7,6 +7,7 @@ import { getEnvVar } from './utils/getEnvVar.js';
 import errorHandler from './middlewares/errorHandler.js';
 import notFoundHandler from './middlewares/notFoundHandler.js';
 import apiRouter from './routes/index.js';
+import { setupSwagger } from './docs/swagger.js';
 
 dotenv.config();
 
@@ -27,11 +28,14 @@ export const startServer = () => {
 
   app.use(pino({ transport: { target: 'pino-pretty' } }));
 
+  setupSwagger(app);
+
   app.use('/api', apiRouter);
   app.use(notFoundHandler);
   app.use(errorHandler);
 
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
+    console.log(`Swagger docs: http://localhost:${PORT}/api-docs`);
   });
 };
