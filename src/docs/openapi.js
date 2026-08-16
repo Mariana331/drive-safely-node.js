@@ -14,7 +14,9 @@ export const openApiSpec = {
   servers: [
     {
       url: 'http://localhost:3002/api',
-      description: 'Local development',
+    },
+    {
+      url: 'https://drive-safely-node-js-1.onrender.com',
     },
   ],
   tags: [
@@ -106,7 +108,11 @@ export const openApiSpec = {
         properties: {
           _id: { type: 'string', example: '665f1a2b3c4d5e6f7a8b9c0d' },
           fullName: { type: 'string', example: 'Olivia Johnson' },
-          email: { type: 'string', format: 'email', example: 'olivia@mail.com' },
+          email: {
+            type: 'string',
+            format: 'email',
+            example: 'olivia@mail.com',
+          },
           dateOfBirth: { type: 'string', format: 'date-time' },
           country: { type: 'string', example: 'Ukraine' },
           driverLicense: { type: 'string', example: '' },
@@ -372,7 +378,8 @@ export const openApiSpec = {
       post: {
         tags: ['Auth'],
         summary: 'Log in',
-        description: 'Validates credentials and sets an HTTP-only `token` cookie.',
+        description:
+          'Validates credentials and sets an HTTP-only `token` cookie.',
         operationId: 'login',
         requestBody: {
           required: true,
@@ -456,7 +463,8 @@ export const openApiSpec = {
       get: {
         tags: ['News'],
         summary: 'List news articles',
-        description: 'Paginated list of published articles with optional filters.',
+        description:
+          'Paginated list of published articles with optional filters.',
         operationId: 'getNews',
         parameters: [
           {
