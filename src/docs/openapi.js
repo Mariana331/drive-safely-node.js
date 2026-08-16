@@ -16,7 +16,7 @@ export const openApiSpec = {
       url: 'http://localhost:3002/api',
     },
     {
-      url: 'https://drive-safely-node-js-1.onrender.com',
+      url: 'https://drive-safely-node-js-1.onrender.com/api',
     },
   ],
   tags: [
